@@ -1546,19 +1546,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\denni\\.nuget\\packages\\": {}
+    "C:\\Users\\Erik\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\denni\\source\\repos\\DMM\\DMM\\DMM.csproj",
+      "projectUniqueName": "C:\\Users\\Erik\\source\\repos\\DMM2\\DMM\\DMM.csproj",
       "projectName": "DMM",
-      "projectPath": "C:\\Users\\denni\\source\\repos\\DMM\\DMM\\DMM.csproj",
-      "packagesPath": "C:\\Users\\denni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\denni\\source\\repos\\DMM\\DMM\\obj\\",
+      "projectPath": "C:\\Users\\Erik\\source\\repos\\DMM2\\DMM\\DMM.csproj",
+      "packagesPath": "C:\\Users\\Erik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Erik\\source\\repos\\DMM2\\DMM\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\denni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Erik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
