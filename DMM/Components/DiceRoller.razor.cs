@@ -6,7 +6,6 @@ namespace DMM.Components
     {
         //1 = Disadvantage, 2 = Advantage, n>2 = default (normal)
         int DieType = 3;
-        List<Dice> DiceToRoll = new();
         List<Dice> RolledDice = new();
         Random Roll = new Random();
 
@@ -55,7 +54,6 @@ namespace DMM.Components
         public void ClearDice()
         {
             RolledDice = new();
-            DiceToRoll = new();
             DieType = 3;
         }
 
@@ -67,7 +65,6 @@ namespace DMM.Components
             int result = 0;
             int highest = 0;
             DieType = 3;
-            DiceToRoll = new();
 
             if(d20AdvantageToRoll != 0)
                 for (i = 0; i < d20AdvantageToRoll; i++)
@@ -80,12 +77,12 @@ namespace DMM.Components
                     else
                         highest = roll2;
 
-                    DiceToRoll.Add(new Dice(20, true, false, roll1, roll2, highest));
+                    RolledDice.Add(new Dice(20, true, false, roll1, roll2, highest));
                 }
 
             if (d20ToRoll != 0)
                 for (i = 0; i < d20ToRoll; i++)
-                    DiceToRoll.Add(new Dice(20, false, false, 0, 0, Roll.Next(1,21)));
+                    RolledDice.Add(new Dice(20, false, false, 0, 0, Roll.Next(1,21)));
 
             if (d20DisAdvantageToRoll != 0)
                 for (i = 0; i < d20DisAdvantageToRoll; i++)
@@ -98,7 +95,7 @@ namespace DMM.Components
                     else
                         highest = roll2;
 
-                    DiceToRoll.Add(new Dice(20, false, true, roll1, roll2, highest));
+                    RolledDice.Add(new Dice(20, false, true, roll1, roll2, highest));
                 }
 
             if (d12AdvantageToRoll != 0)
@@ -108,12 +105,12 @@ namespace DMM.Components
                     roll2 = Roll.Next(1, 13);
                     result = roll1 + roll2;
 
-                    DiceToRoll.Add(new Dice(12, true, false, roll1, roll2, result));
+                    RolledDice.Add(new Dice(12, true, false, roll1, roll2, result));
                 }
 
             if (d12ToRoll != 0)
                 for (i = 0; i < d12ToRoll; i++)
-                    DiceToRoll.Add(new Dice(12, false, false, 0, 0, Roll.Next(1, 13)));
+                    RolledDice.Add(new Dice(12, false, false, 0, 0, Roll.Next(1, 13)));
 
             if (d12DisAdvantageToRoll != 0)
                 for (i = 0; i < d12DisAdvantageToRoll; i++)
@@ -121,7 +118,7 @@ namespace DMM.Components
                     roll1 = Roll.Next(1, 13);
                     result = roll1 / 2;
 
-                    DiceToRoll.Add(new Dice(12, false, true, roll1, 0, result));
+                    RolledDice.Add(new Dice(12, false, true, roll1, 0, result));
                 }
 
             if (d10AdvantageToRoll != 0)
@@ -131,12 +128,12 @@ namespace DMM.Components
                     roll2 = Roll.Next(1, 11);
                     result = roll1 + roll2;
 
-                    DiceToRoll.Add(new Dice(10, true, false, roll1, roll2, result));
+                    RolledDice.Add(new Dice(10, true, false, roll1, roll2, result));
                 }
 
             if (d10ToRoll != 0)
                 for (i = 0; i < d10ToRoll; i++)
-                    DiceToRoll.Add(new Dice(10, false, false, 0, 0, Roll.Next(1, 11)));
+                    RolledDice.Add(new Dice(10, false, false, 0, 0, Roll.Next(1, 11)));
 
             if (d10DisAdvantageToRoll != 0)
                 for (i = 0; i < d10DisAdvantageToRoll; i++)
@@ -144,7 +141,7 @@ namespace DMM.Components
                     roll1 = Roll.Next(1, 11);
                     result = roll1 / 2;
 
-                    DiceToRoll.Add(new Dice(10, false, true, roll1, 0, result));
+                    RolledDice.Add(new Dice(10, false, true, roll1, 0, result));
                 }
 
             if (d8AdvantageToRoll != 0)
@@ -154,12 +151,12 @@ namespace DMM.Components
                     roll2 = Roll.Next(1, 9);
                     result = roll1 + roll2;
 
-                    DiceToRoll.Add(new Dice(8, true, false, roll1, roll2, result));
+                    RolledDice.Add(new Dice(8, true, false, roll1, roll2, result));
                 }
 
             if (d8ToRoll != 0)
                 for (i = 0; i < d8ToRoll; i++)
-                    DiceToRoll.Add(new Dice(8, false, false, 0, 0, Roll.Next(1, 9)));
+                    RolledDice.Add(new Dice(8, false, false, 0, 0, Roll.Next(1, 9)));
 
             if (d8DisAdvantageToRoll != 0)
                 for (i = 0; i < d8DisAdvantageToRoll; i++)
@@ -167,7 +164,7 @@ namespace DMM.Components
                     roll1 = Roll.Next(1, 9);
                     result = roll1 / 2;
 
-                    DiceToRoll.Add(new Dice(8, false, true, roll1, 0, result));
+                    RolledDice.Add(new Dice(8, false, true, roll1, 0, result));
                 }
 
             if (d6AdvantageToRoll != 0)
@@ -177,22 +174,20 @@ namespace DMM.Components
                     roll2 = Roll.Next(1, 7);
                     result = roll1 + roll2;
 
-                    DiceToRoll.Add(new Dice(6, true, false, roll1, roll2, result));
+                    RolledDice.Add(new Dice(6, true, false, roll1, roll2, result));
                 }
 
             if (d6ToRoll != 0)
                 for (i = 0; i < d6ToRoll; i++)
-                    DiceToRoll.Add(new Dice(6, false, false, 0, 0, Roll.Next(1, 7)));
+                    RolledDice.Add(new Dice(6, false, false, 0, 0, Roll.Next(1, 7)));
 
             if (d6DisAdvantageToRoll != 0)
                 for (i = 0; i < d6DisAdvantageToRoll; i++)
                 {
                     roll1 = Roll.Next(1, 7);
                     result = roll1 / 2;
-                    if (result == 0)
-                        result = 1;
 
-                    DiceToRoll.Add(new Dice(6, false, true, roll1, 0, result));
+                    RolledDice.Add(new Dice(6, false, true, roll1, 0, result));
                 }
 
             if (d4AdvantageToRoll != 0)
@@ -202,26 +197,22 @@ namespace DMM.Components
                     roll2 = Roll.Next(1, 5);
                     result = roll1 + roll2;
 
-                    DiceToRoll.Add(new Dice(4, true, false, roll1, roll2, result));
+                    RolledDice.Add(new Dice(4, true, false, roll1, roll2, result));
                 }
 
             if (d4ToRoll != 0)
                 for (i = 0; i < d4ToRoll; i++)
-                    DiceToRoll.Add(new Dice(4, false, false, 0, 0, Roll.Next(1, 5)));
+                    RolledDice.Add(new Dice(4, false, false, 0, 0, Roll.Next(1, 5)));
 
             if (d4DisAdvantageToRoll != 0)
                 for (i = 0; i < d4DisAdvantageToRoll; i++)
                 {
                     roll1 = Roll.Next(1, 5);
                     result = roll1 / 2;
-                    if (result == 0)
-                        result = 1;
 
-                    DiceToRoll.Add(new Dice(4, false, true, roll1, 0, result));
+                    RolledDice.Add(new Dice(4, false, true, roll1, 0, result));
                 }
 
-            foreach (var die in DiceToRoll)
-                RolledDice.Add(die);
 
             RolledDice = RolledDice
                 .OrderByDescending(x => x.DieResult)

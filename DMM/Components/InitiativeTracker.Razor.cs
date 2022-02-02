@@ -33,13 +33,13 @@ namespace DMM.Components
                 ini.Roll = newInitiative;
             }
         }
-        public void AddInitiative(string initiativeName, int initiativeRoll, int status)
+        public void AddInitiative(string initiativeName, int initiativeMod, int status)
         {
-            if (initiativeName != "" && initiativeName != null && initiativeRoll >= -99 && initiativeRoll <= 99 )
+            if (initiativeName != "" && initiativeName != null && initiativeMod >= -99 && initiativeMod <= 99 )
             {
                 var i = new Initiative(
                     initiativeName,
-                    (initiativeRoll == 0 ? rnd.Next(1,21) : initiativeRoll),
+                    (initiativeMod = rnd.Next(1,21) + initiativeMod),
                     status,
                     false
                 );
@@ -86,7 +86,6 @@ namespace DMM.Components
 
                 }
                 InitFormModel.Name = "";
-                InitFormModel.Roll = 0;
             }
         }
         public void SortInitiative()
