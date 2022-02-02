@@ -1,0 +1,286 @@
+﻿
+/*Color Code -- Färgkod -- ColorCode
+    Grayscale
+    Ljus = #878686
+    Mörk = #2A2929
+
+    Golden colors:
+    Ljus = #FFD341
+    Mörk = #604207
+
+    Red colors:
+    ljus = #CB1A1A
+    Mörk = #2E0202
+*/
+
+.cancel {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/cancel.png);
+}
+
+    .cancel:hover {
+        background-image: url(../../images/Dice/cancelHover.png);
+    }
+
+.sort {
+    background-size: 100% 100%;
+    background-image: url(../../images/Buttons/Sort.png);
+}
+
+    .sort:hover {
+        background-image: url(../../images/Buttons/SortHover.png);
+    }
+
+.next {
+    background-size: 100% 100%;
+    background-image: url(../../images/Buttons/Next.png);
+}
+
+    .next:hover {
+        background-image: url(../../images/Buttons/NextHover.png);
+    }
+
+.populate {
+    background-size: 100% 100%;
+    background-image: url(../../images/Buttons/Populate.png);
+}
+
+    .populate:hover {
+        background-image: url(../../images/Buttons/PopulateHover.png);
+    }
+
+.skull {
+    background-size: 100% 100%;
+    background-image: url(../../images/monster.png);
+}
+
+    .skull:not(.nohover):hover {
+        background-image: url(../../images/monsterHover.png);
+    }
+
+.shield {
+    background-size: 100% 100%;
+    background-image: url(../../images/ally.png);
+}
+
+    .shield:not(.nohover):hover {
+        background-image: url(../../images/allyHover.png);
+    }
+
+.player {
+    background-size: 100% 100%;
+    background-image: url(../../images/character.png);
+}
+
+    .player:not(.nohover):hover {
+        background-image: url(../../images/characterHover.png);
+    }
+
+/*DiceButtons*/
+
+.RollButton {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/roll.png);
+}
+
+    .RollButton:not(.nohover):hover {
+        background-image: url(../../images/Dice/rollHover.png);
+    }
+
+.CancelRoll {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/cancel.png);
+}
+
+    .CancelRoll:not(.nohover):hover {
+        background-image: url(../../images/Dice/cancelHover.png);
+    }
+
+.AdvantageButton {
+    background-size: contain;
+    background-image: url(../../images/AdvantageButton.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.AdvantageButtonClicked {
+    background-size: contain;
+    background-image: url(../../images/AdvantageButtonClicked.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.DisadvantageButton {
+    background-size: contain;
+    background-image: url(../../images/DisadvantageButton.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.DisadvantageButtonClicked {
+    background-size: contain;
+    background-image: url(../../images/DisadvantageButtonClicked.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.d20 {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Normal/d20.png);
+}
+
+    .d20:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Normal/d20Hover.png);
+    }
+
+.d20Cursed {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Cursed/D20Cursed.png);
+}
+
+    .d20Cursed:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Cursed/D20CursedHover.png);
+    }
+
+.d20Golden {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Golden/D20Golden.png);
+}
+    .d20Golden:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Golden/D20GoldenHover.png);
+    }
+
+.d12 {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Normal/d12.png);
+}
+
+    .d12:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Normal/d12Hover.png);
+    }
+
+.d12Cursed {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Cursed/D12Cursed.png);
+}
+
+    .d12Cursed:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Cursed/D12CursedHover.png);
+    }
+
+.d12Golden {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Golden/D12Golden.png);
+}
+
+    .d12Golden:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Golden/D12GoldenHover.png);
+    }
+
+.d10 {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Normal/d10.png);
+}
+
+    .d10:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Normal/d10Hover.png);
+    }
+
+.d10Cursed {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Cursed/D10Cursed.png);
+}
+
+    .d10Cursed:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Cursed/D10CursedHover.png);
+    }
+
+.d10Golden {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Golden/D10Golden.png);
+}
+
+    .d10Golden:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Golden/D10GoldenHover.png);
+    }
+
+.d8 {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Normal/d8.png);
+}
+
+    .d8:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Normal/d8Hover.png);
+    }
+
+.d8Cursed {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Cursed/D8Cursed.png);
+}
+
+    .d8Cursed:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Cursed/D8CursedHover.png);
+    }
+
+.d8Golden {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Golden/D8Golden.png);
+}
+
+    .d8Golden:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Golden/D8GoldenHover.png);
+    }
+
+.d6 {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Normal/d6.png);
+}
+
+    .d6:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Normal/d6Hover.png);
+    }
+
+.d6Cursed {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Cursed/D6Cursed.png);
+}
+
+    .d6Cursed:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Cursed/D6CursedHover.png);
+    }
+
+.d6Golden {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Golden/D6Golden.png);
+}
+
+    .d6Golden:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Golden/D6GoldenHover.png);
+    }
+
+.d4 {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Normal/d4.png);
+}
+
+    .d4:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Normal/d4Hover.png);
+    }
+
+.d4Cursed {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Cursed/D4Cursed.png);
+}
+
+    .d4Cursed:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Cursed/D4CursedHover.png);
+    }
+
+.d4Golden {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Golden/D4Golden.png);
+}
+
+    .d4Golden:not(.nohover):hover {
+        background-image: url(../../images/Dice/ButtonDice/Golden/D4GoldenHover.png);
+    }

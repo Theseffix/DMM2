@@ -1,0 +1,155 @@
+﻿
+<body>
+    <div class="InitiativeWoodTray">
+          <div class="InitiativeVelvetTray">
+              <div class="scrollbar">
+                  @foreach (var initiative in InitiativeList)
+                  {
+                    @if (initiative.IsCurrent)
+                    {
+                        <div class="InitiativeObject First-Ini-obj glow">
+                            @if (initiative.Status == 1)
+                            {
+                                @if(initiative.Name == "Beorm"){
+                                    <div class="BeormIMG First-Icon-Measurment" />
+                                }
+                                else if (initiative.Name == "Victor Morningstar")
+                                {
+                                    <div class="VictorIMG First-Icon-Measurment" />
+                                }else if (initiative.Name == "Sam Logan")
+                                {
+                                    <div class="SamIMG First-Icon-Measurment" />
+                                }else if (initiative.Name == "Kaia Nova")
+                                {
+                                    <div class="KaiaIMG First-Icon-Measurment" />
+                                }else if (initiative.Name == "Leo Woodlock")
+                                {
+                                    <div class="LeoIMG First-Icon-Measurment" />
+                                }
+                                else
+                                { 
+                                    <div class="PlayerInitiative First-Icon-Measurment" />
+                                }
+                            }
+                            else if (initiative.Status == 2)
+                            {
+                                <div class="MonsterInitiative First-Icon-Measurment" />
+                            }
+                            else if (initiative.Status == 3)
+                            {
+                                <div class="AllyInitiative First-Icon-Measurment" />
+                            }
+                            <div class="InitiativeTextContainerFirst InitiativeText">
+                                <t class="InitiativeText unselectable">@initiative.Name</t>
+                            </div>
+                            <div class="RemoveInitiative Margin4" @onclick="()=>RemoveInitiative(initiative)" />
+                            <div class="InitiativeRollContainer">
+                                <input
+                                    class="InitiativeRoll"
+                                    type="number"
+                                    value="@initiative.Roll"
+                                    @onchange="(ChangeEventArgs e) => ChangeRoll(initiative, int.Parse(e.Value.ToString()))"
+                                />
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="InitiativeObject Normal-Ini-obj">
+                            @if (initiative.Status == 1)
+                            {
+                                @if(initiative.Name == "Beorm"){
+                                    <div class="BeormIMG Normal-Icon-Measurment" />
+                                }
+                                else if (initiative.Name == "Victor Morningstar")
+                                {
+                                    <div class="VictorIMG Normal-Icon-Measurment" />
+                                }else if (initiative.Name == "Sam Logan")
+                                {
+                                    <div class="SamIMG Normal-Icon-Measurment" />
+                                }else if (initiative.Name == "Kaia Nova")
+                                {
+                                    <div class="KaiaIMG Normal-Icon-Measurment" />
+                                }else if (initiative.Name == "Leo Woodlock")
+                                {
+                                    <div class="LeoIMG Normal-Icon-Measurment" />
+                                }
+                                else
+                                { 
+                                    <div class="PlayerInitiative Normal-Icon-Measurment" />
+                                }
+                            }
+                            else if (initiative.Status == 2)
+                            {
+                                <div class="MonsterInitiative Normal-Icon-Measurment" />
+                            }
+                            else if (initiative.Status == 3)
+                            {
+                                <div class="AllyInitiative Normal-Icon-Measurment" />
+                            }
+                            <div class="InitiativeTextContainer InitiativeText">
+                                <t class="InitiativeText unselectable">@initiative.Name</t>
+                            </div>
+                            <div class="RemoveInitiative Margin2 cancel" @onclick="()=>RemoveInitiative(initiative)" />
+                            <div class="InitiativeRollContainer">
+                                <input
+                                    class="InitiativeRoll"
+                                    type="number"
+                                    value="@initiative.Roll"
+                                    @onchange="(ChangeEventArgs e) => ChangeRoll(initiative, int.Parse(e.Value.ToString()))"
+                                />
+                            </div>
+                        </div>
+                    }
+                  }
+              </div>
+          </div>
+              <table class="IniButtonContainerVertical">
+                  <tr>
+                      <td>
+                        <button class="IniButtons sort" @onclick="()=>SortInitiative()"/>
+                      </td>
+                  </tr>
+                      <tr>
+                          <td>
+                            <button class="IniButtons next" @onclick="()=>NextInitiative()"/>
+                          </td>
+                      </tr>
+                  @if(InitiativeList.Count() != 0){
+                  <tr>
+                      <td>
+                        <button class="IniButtons cancel" @onclick="()=>ClearInitiative()"/>
+                      </td>
+                  </tr>
+                  }
+                  @if(InitiativeList.Count() == 0 || !InitiativeList.Any( x => x.Status == 1)){
+                      <tr>
+                          <td>
+                            <button class="IniButtons populate" @onclick="()=>AddPlayers()"/>
+                          </td>
+                      </tr>
+                  }
+              </table>
+          <EditForm Model="@InitFormModel">
+              <DataAnnotationsValidator/>
+              <div class="InitiativeObject InitiativeInputMargins">
+                  <input class="InitiativeInput" type="text" @bind="InitFormModel.Name" />
+                  <input class="InitiativeRoll2" type="number" @bind="InitFormModel.Roll" />
+                      <table class="IniButtonContainerHorizontal">
+                          <tr>
+                              <td>
+                                <button class="IniButtons skull" @onclick="()=>AddInitiative(InitFormModel.Name,InitFormModel.Roll, 2)"></button>
+                              </td>
+                              <td>
+                                <button class="IniButtons shield" @onclick="()=>AddInitiative(InitFormModel.Name,InitFormModel.Roll, 3)"></button>
+                              </td>
+                              <td>
+                                <button class="IniButtons player" type="submit" @onclick="()=>AddInitiative(InitFormModel.Name,InitFormModel.Roll, 1)"></button>
+                              </td>
+                          </tr>
+                      </table>
+              </div>
+          </EditForm>
+
+    </div>
+</body>

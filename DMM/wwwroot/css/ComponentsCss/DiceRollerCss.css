@@ -1,0 +1,236 @@
+﻿/* one item */
+.BadgeContainer:nth-child(n+7) {
+    padding-left:20px;
+}
+
+.DiceRollerContainer {
+    height:fit-content;
+    width:fit-content;
+    display:inline-flex;
+}
+
+.DieWoodTray {
+    border: 3px solid black;
+    height: 280px;
+    width: 470px;
+    background-image: url(../../images/diceTrayWood.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+}
+
+.DieVelvetTray {
+    border: 3px solid black;
+    margin:3px;
+    height: 268px;
+    width: 400px;
+    background-image: url(../../images/diceTrayRed.png);
+    background-size: 101% 101%;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+}
+
+.scrollbarDieTray {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+    .scrollbarDieTray::-webkit-scrollbar {
+        width: 0px; /* width of the entire scrollbar */
+    }
+
+    .scrollbarDieTray::-webkit-scrollbar-track {
+        background: transparent; /* color of the tracking area */
+    }
+
+    .scrollbarDieTray::-webkit-scrollbar-thumb {
+        background-color: transparent; /* color of the scroll thumb */
+        border-radius: 20px; /* roundness of the scroll thumb */
+    }
+
+    .scrollbarDieTray:hover::-webkit-scrollbar-thumb {
+        background-color: #404040; /* color of the scroll thumb */
+        border-radius: 20px; /* roundness of the scroll thumb */
+        border: 1px solid black;
+        opacity: 0.3;
+    }
+
+/*Badges*/
+
+.BadgeContainer {
+    width:60px;
+    height:33px;
+    display:flex;
+    position:absolute;
+    justify-content:center;
+    align-items:center;
+}
+
+.Badge {
+    width: 18px;
+    height: 19px;
+    color: white;
+    font-family: draconis;
+    font-size: small;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align:center;
+}
+
+.GoldenBadge {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Golden/GoldenBadge.png);
+}
+
+.NormalBadge {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Normal/RoundBadge.png);
+}
+
+.CursedBadge {
+    background-size: 100% 100%;
+    background-image: url(../../images/Dice/ButtonDice/Cursed/CursedBadge.png);
+}
+
+/*Buttons*/
+.diceContainerVertical table {
+    float:left;
+    
+}
+
+.diceContainerVertical td {
+    display: inline-block;
+}
+
+.DieButton {
+    margin:1px;
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    background-color: transparent;
+    border: none;
+}
+
+.DieSwitch {
+    margin-left: 10px;
+    margin-right: 3px;
+    width:35px;
+    height:35px;
+    border: none;
+    background-color: transparent;
+    align-items:center;
+}
+
+/*Dice*/
+
+.DieButtonsContainer {
+    width:fit-content;
+}
+
+.DieButtonCanvas {
+    width: 43px;
+    height: 43px;
+    background-color: transparent;
+    background: no-repeat center;
+    border: none;
+    color: white;
+    font-family: draconis;
+    font-size: large;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.d20Turquoise {
+    padding-left:10px;
+    background-size: 155% 145%;
+    background-image: url(../../images/Dice/RolledDice/TurquoiseDice/Turquoise_D20);
+}
+
+.d20Gold {
+    padding-left: 10px;
+    background-size: 155% 145%;
+    background-image: url(../../images/Dice/RolledDice/GoldenDice/Gold_D20.png);
+}
+
+.d20Red {
+    padding-left: 10px;
+    background-size: 155% 145%;
+    background-image: url(../../images/Dice/RolledDice/RedDice/Red_D20.png);
+}
+
+.d12Turquoise {
+    background-size: 140% 140%;
+    background-image: url(../../images/Dice/RolledDice/TurquoiseDice/Turquoise_D12);
+}
+
+.d12Gold {
+    background-size: 140% 140%;
+    background-image: url(../../images/Dice/RolledDice/GoldenDice/Gold_D12.png);
+}
+
+.d12Red {
+    background-size: 140% 140%;
+    background-image: url(../../images/Dice/RolledDice/RedDice/Red_D12.png);
+}
+
+.d10Turquoise {
+    background-size: 140% 140%;
+    background-image: url(../../images/Dice/RolledDice/TurquoiseDice/Turquoise_D10);
+}
+
+.d10Gold {
+    background-size: 140% 140%;
+    background-image: url(../../images/Dice/RolledDice/GoldenDice/Gold_D10.png);
+}
+
+.d10Red {
+    background-size: 140% 140%;
+    background-image: url(../../images/Dice/RolledDice/RedDice/Red_D10.png);
+}
+
+.d8Turquoise {
+    background-size: 140% 140%;
+    background-image: url(../../images/Dice/RolledDice/TurquoiseDice/Turquoise_D8);
+}
+
+.d8Gold {
+    background-size: 140% 140%;
+    background-image: url(../../images/Dice/RolledDice/GoldenDice/Gold_D8.png);
+}
+
+.d8Red {
+    background-size: 140% 140%;
+    background-image: url(../../images/Dice/RolledDice/RedDice/Red_D8.png);
+}
+
+.d6Turquoise {
+    background-size: 125% 125%;
+    background-image: url(../../images/Dice/RolledDice/TurquoiseDice/Turquoise_D6);
+}
+
+.d6Gold {
+    background-size: 125% 125%;
+    background-image: url(../../images/Dice/RolledDice/GoldenDice/Gold_D6.png);
+}
+
+.d6Red {
+    background-size: 125% 125%;
+    background-image: url(../../images/Dice/RolledDice/RedDice/Red_D6.png);
+}
+
+.d4Turquoise {
+    padding-top:8px;
+    background-size: 120% 120%;
+    background-image: url(../../images/Dice/RolledDice/TurquoiseDice/Turquoise_D4);
+}
+
+.d4Gold {
+    padding-top: 8px;
+    background-size: 120% 120%;
+    background-image: url(../../images/Dice/RolledDice/GoldenDice/Gold_D4.png);
+}
+
+.d4Red {
+    padding-top: 8px;
+    background-size: 120% 120%;
+    background-image: url(../../images/Dice/RolledDice/RedDice/Red_D4.png);
+}

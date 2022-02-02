@@ -1,0 +1,810 @@
+﻿
+
+
+
+
+
+<div class="DiceRollerContainer">
+    <table class="diceContainerVertical">
+        <tr>
+            <td>
+                @if(DieType == 1)
+                {
+                    <button class="DieSwitch DisadvantageButtonClicked"
+                        @onclick="DisAdvantageSwitch_Click"
+                    />
+                }
+                else
+                {
+                    <button class="DieSwitch DisadvantageButton"
+                        @onclick="DisAdvantageSwitch_Click"
+                    />
+                }
+
+                @if(DieType == 2)
+                {
+                    <button class="DieSwitch AdvantageButtonClicked"
+                        @onclick="AdvantageSwitch_Click"
+                    />
+                }
+                else
+                {
+                    <button class="DieSwitch AdvantageButton"
+                        @onclick="AdvantageSwitch_Click"
+                    />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @switch (DieType)
+                {    
+                case 1:
+                    <button class="DieButton d20Cursed"
+                            @onclick="AddD20DisAdvantage"
+                            @oncontextmenu="SubtractD20DisAdvantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d20DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d20DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d20ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d20ToRoll
+                                </div>
+                            }
+                            @if(d20AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d20AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                case 2:
+                    <button class="DieButton d20Golden"
+                            @onclick="AddD20Advantage"
+                            @oncontextmenu="SubtractD20Advantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d20DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d20DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d20ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d20ToRoll
+                                </div>
+                            }
+                            @if(d20AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d20AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                default:
+                    <button class="DieButton d20"
+                        @onclick="AddD20"
+                        @oncontextmenu="SubtractD20"
+                        @oncontextmenu:preventDefault="true"
+                    >
+                    <div class="BadgeContainer">
+                            @if(d20DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d20DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d20ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d20ToRoll
+                                </div>
+                            }
+                            @if(d20AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d20AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                }
+            </td>
+            <td>
+                @switch (DieType)
+                {    
+                case 1:
+                    <button class="DieButton d12Cursed"
+                            @onclick="AddD12DisAdvantage"
+                            @oncontextmenu="SubtractD12DisAdvantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d12DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d12DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d12ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d12ToRoll
+                                </div>
+                            }
+                            @if(d12AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d12AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                case 2:
+                    <button class="DieButton d12Golden"
+                            @onclick="AddD12Advantage"
+                            @oncontextmenu="SubtractD12Advantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d12DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d12DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d12ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d12ToRoll
+                                </div>
+                            }
+                            @if(d12AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d12AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                default:
+                    <button class="DieButton d12"
+                        @onclick="AddD12"
+                        @oncontextmenu="SubtractD12"
+                        @oncontextmenu:preventDefault="true"
+                    >
+                    <div class="BadgeContainer">
+                            @if(d12DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d12DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d12ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d12ToRoll
+                                </div>
+                            }
+                            @if(d12AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d12AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @switch (DieType)
+                {    
+                case 1:
+                    <button class="DieButton d10Cursed"
+                            @onclick="AddD10DisAdvantage"
+                            @oncontextmenu="SubtractD10DisAdvantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d10DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d10DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d10ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d10ToRoll
+                                </div>
+                            }
+                            @if(d10AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d10AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                case 2:
+                    <button class="DieButton d10Golden"
+                            @onclick="AddD10Advantage"
+                            @oncontextmenu="SubtractD10Advantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d10DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d10DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d10ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d10ToRoll
+                                </div>
+                            }
+                            @if(d10AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d10AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                default:
+                    <button class="DieButton d10"
+                        @onclick="AddD10"
+                        @oncontextmenu="SubtractD10"
+                        @oncontextmenu:preventDefault="true"
+                    >
+                    <div class="BadgeContainer">
+                            @if(d10DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d10DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d10ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d10ToRoll
+                                </div>
+                            }
+                            @if(d10AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d10AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                }
+            </td>
+            <td>
+                @switch (DieType)
+                {    
+                case 1:
+                    <button class="DieButton d8Cursed"
+                            @onclick="AddD8DisAdvantage"
+                            @oncontextmenu="SubtractD8DisAdvantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d8DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d8DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d8ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d8ToRoll
+                                </div>
+                            }
+                            @if(d8AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d8AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                case 2:
+                    <button class="DieButton d8Golden"
+                            @onclick="AddD8Advantage"
+                            @oncontextmenu="SubtractD8Advantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d8DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d8DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d8ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d8ToRoll
+                                </div>
+                            }
+                            @if(d8AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d8AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                default:
+                    <button class="DieButton d8"
+                        @onclick="AddD8"
+                        @oncontextmenu="SubtractD8"
+                        @oncontextmenu:preventDefault="true"
+                    >
+                    <div class="BadgeContainer">
+                            @if(d8DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d8DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d8ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d8ToRoll
+                                </div>
+                            }
+                            @if(d8AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d8AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @switch (DieType)
+                {    
+                case 1:
+                    <button class="DieButton d6Cursed"
+                            @onclick="AddD6DisAdvantage"
+                            @oncontextmenu="SubtractD6DisAdvantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d6DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d6DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d6ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d6ToRoll
+                                </div>
+                            }
+                            @if(d6AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d6AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                case 2:
+                    <button class="DieButton d6Golden"
+                            @onclick="AddD6Advantage"
+                            @oncontextmenu="SubtractD6Advantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d6DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d6DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d6ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d6ToRoll
+                                </div>
+                            }
+                            @if(d6AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d6AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                default:
+                    <button class="DieButton d6"
+                        @onclick="AddD6"
+                        @oncontextmenu="SubtractD6"
+                        @oncontextmenu:preventDefault="true"
+                    >
+                    <div class="BadgeContainer">
+                            @if(d6DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d6DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d6ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d6ToRoll
+                                </div>
+                            }
+                            @if(d6AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d8AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                }
+            </td>
+            <td>
+                @switch (DieType)
+                {    
+                case 1:
+                    <button class="DieButton d4Cursed"
+                            @onclick="AddD4DisAdvantage"
+                            @oncontextmenu="SubtractD4DisAdvantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d4DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d4DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d4ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d4ToRoll
+                                </div>
+                            }
+                            @if(d4AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d4AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                case 2:
+                    <button class="DieButton d4Golden"
+                            @onclick="AddD4Advantage"
+                            @oncontextmenu="SubtractD4Advantage"
+                            @oncontextmenu:preventDefault="true"
+                    >
+                        <div class="BadgeContainer">
+                            @if(d4DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d4DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d4ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d4ToRoll
+                                </div>
+                            }
+                            @if(d4AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d4AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                default:
+                    <button class="DieButton d4"
+                        @onclick="AddD4"
+                        @oncontextmenu="SubtractD4"
+                        @oncontextmenu:preventDefault="true"
+                    >
+                    <div class="BadgeContainer">
+                            @if(d4DisAdvantageToRoll > 0)
+                            {
+                                <div class="Badge CursedBadge unselectable">
+                                    @d4DisAdvantageToRoll
+                                </div>   
+                            }
+                            @if(d4ToRoll > 0)
+                            {
+                                <div class="Badge NormalBadge unselectable">
+                                    @d4ToRoll
+                                </div>
+                            }
+                            @if(d4AdvantageToRoll > 0)
+                            {
+                                <div class="Badge GoldenBadge unselectable">
+                                    @d4AdvantageToRoll
+                                </div>
+                            }
+                        </div>
+                    </button>
+                    break;
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="DieButton RollButton"
+                    @onclick="()=>RollDice()"
+                />
+            </td>
+            <td>
+                @if (RolledDice.Any())
+                {
+                    <button class="DieButton CancelRoll"
+                        @onclick="()=>ClearDice()"
+                    />
+                }
+            </td>
+        </tr>
+    </table>
+    <div class="DieWoodTray">
+        <div class="DieVelvetTray">
+            <div class="scrollbarDieTray">
+                @if(RolledDice.Any(x => x.DieType == 20))
+                {
+                    <div class="DieButtonsContainer">
+                        @foreach (var die in RolledDice)
+                        {
+                            @if(die.DieType == 20)
+                            {
+                                @if (die.Advantage)
+                                {        
+                                    <button class="DieButtonCanvas d20Gold unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }else if (die.Disadvantage)
+                                {
+                                    <button class="DieButtonCanvas d20Red unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button class="DieButtonCanvas d20Turquoise unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                            }
+                        }
+                    </div>
+                }
+
+                @if(RolledDice.Any(x => x.DieType == 12))
+                {
+                    <div class="DieButtonsContainer">
+                        @foreach (var die in RolledDice)
+                        {
+                            @if(die.DieType == 12)
+                            {
+                                @if (die.Advantage)
+                                {        
+                                    <button class="DieButtonCanvas d12Gold unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }else if (die.Disadvantage)
+                                {
+                                    <button class="DieButtonCanvas d12Red unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button class="DieButtonCanvas d12Turquoise unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                            }
+                        }
+                    </div>
+                }
+
+                @if(RolledDice.Any(x => x.DieType == 10))
+                {
+                    <div class="DieButtonsContainer">
+                        @foreach (var die in RolledDice)
+                        {
+                            @if(die.DieType == 10)
+                            {
+                                @if (die.Advantage)
+                                {        
+                                    <button class="DieButtonCanvas d10Gold unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }else if (die.Disadvantage)
+                                {
+                                    <button class="DieButtonCanvas d10Red unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button class="DieButtonCanvas d10Turquoise unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                            }
+                        }
+                    </div>
+                }
+
+                @if(RolledDice.Any(x => x.DieType == 8))
+                {
+                    <div class="DieButtonsContainer">
+                        @foreach (var die in RolledDice)
+                        {
+                            @if(die.DieType == 8)
+                            {
+                                @if (die.Advantage)
+                                {        
+                                    <button class="DieButtonCanvas d8Gold unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }else if (die.Disadvantage)
+                                {
+                                    <button class="DieButtonCanvas d8Red unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button class="DieButtonCanvas d8Turquoise unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                            }
+                        }
+                    </div>
+                }
+
+                @if(RolledDice.Any(x => x.DieType == 6))
+                {
+                    <div class="DieButtonsContainer">
+                        @foreach (var die in RolledDice)
+                        {
+                            @if(die.DieType == 6)
+                            {
+                                @if (die.Advantage)
+                                {        
+                                    <button class="DieButtonCanvas d6Gold unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }else if (die.Disadvantage)
+                                {
+                                    <button class="DieButtonCanvas d6Red unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button class="DieButtonCanvas d6Turquoise unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                            }
+                        }
+                    </div>
+                }
+
+                @if(RolledDice.Any(x => x.DieType == 4))
+                {
+                    <div class="DieButtonsContainer">
+                        @foreach (var die in RolledDice)
+                        {
+                            @if(die.DieType == 4)
+                            {
+                                @if (die.Advantage)
+                                {        
+                                    <button class="DieButtonCanvas d4Gold unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }else if (die.Disadvantage)
+                                {
+                                    <button class="DieButtonCanvas d4Red unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button class="DieButtonCanvas d4Turquoise unselectable"
+                                        @onclick="()=>RemoveSingleDie(die)"
+                                    >
+                                        @die.DieResult
+                                    </button>
+                                }
+                            }
+                        }
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

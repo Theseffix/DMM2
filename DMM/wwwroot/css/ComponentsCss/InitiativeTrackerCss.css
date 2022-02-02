@@ -1,0 +1,256 @@
+﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+/*Trays and backgrounds*/
+
+.InitiativeWoodTray {
+    border: 3px solid black;
+    height: 335px;
+    min-width:260px;
+    max-width: 460px;
+    padding:1px;
+    background-image: url(../../images/diceTrayWood.png);
+    background-size: 101% 101%;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+}
+
+.InitiativeVelvetTray {
+    border: 3px solid black;
+    border-radius: 5px;
+    height: 285px;
+    background-image: url(../../images/diceTrayRed.png);
+    background-size: 100% 100%;
+    width: 408px;
+    float:left;
+}
+
+/*Initiative Object*/
+
+.InitiativeObject {
+    background-image: url(../../images/SlateStone.png);
+    background-size: 100% 100%;
+    display: inline-block;
+}
+
+.First-Ini-obj {
+    border: 3px solid #404040;
+    border-radius: 12px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    width: 95%;
+    height: 40px;
+}
+
+.Normal-Ini-obj {
+    border: 3px solid black;
+    border-radius: 12px;
+    margin-top: 5px;
+    width: 90%;
+    height: 35px;
+    opacity: 60%;
+}
+
+.BeormIMG {
+    float: left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(../../images/PlayerProfiles/Beorm.PNG);
+}
+
+.VictorIMG {
+    float: left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(../../images/PlayerProfiles/VictorMorningstarProfile.PNG);
+}
+
+.SamIMG {
+    float: left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(../../images/PlayerProfiles/SamLogan.PNG);
+}
+
+.KaiaIMG {
+    float: left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(../../images/PlayerProfiles/KaiaNova.PNG);
+}
+
+.LeoIMG {
+    float: left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(../../images/PlayerProfiles/LeoWoodlock.PNG);
+}
+
+.PlayerInitiative {
+    float:left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(../../images/character.png);
+}
+
+.MonsterInitiative {
+    float: left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(../../images/monster.png);
+}
+
+.AllyInitiative {
+    float: left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(../../images/ally.png);
+}
+
+.First-Icon-Measurment {
+    height: 50px;
+    width: 50px;
+    margin-top: -7px;
+    margin-left: -8px;
+    border-radius: 50%;
+    border: 2px solid #2A2929;
+}
+
+.Normal-Icon-Measurment {
+    height: 42px;
+    width: 42px;
+    margin-top: -6px;
+    margin-left: -7px;
+    border-radius: 50%;
+    border: 2px solid #2A2929;
+}
+
+.InitiativeTextContainerFirst {
+    float: left;
+    margin: -3px;
+    margin-left: 8px;
+    width: 65%;
+}
+
+.InitiativeTextContainer {
+    float: left;
+    margin: -5px;
+    margin-left: 8px;
+    width: 65%;
+}
+
+.InitiativeText {
+    text-align:center;
+    color: white;
+    font-family: draconis;
+    font-size: x-large;
+    text-shadow: -1px -1px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    letter-spacing: 0.1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.InitiativeRollContainer {
+    float: left;
+    margin-left: 10px;
+    margin-top: 1px;
+    width: 9%;
+    height: 90%;
+}
+
+.InitiativeRoll {
+    text-align: center;
+    background-color: transparent;
+    padding-bottom: 2px;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-family: draconis;
+    font-size: x-large;
+    text-shadow: -1px -1px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    letter-spacing: 0.1rem;
+    }
+
+    .InitiativeRoll:focus{
+        outline-width: 0px;
+    }
+
+.InitiativeInput {
+    text-align: center;
+    background-color: transparent;
+    margin-top: 3px;
+    margin-left: 3px;
+    width: 60%;
+    height: 100%;
+    color: white;
+    font-family: draconis;
+    font-size: x-large;
+    text-shadow: -1px -1px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    letter-spacing: 0.1rem;
+    float: left;
+}
+
+    .InitiativeInput:focus {
+        outline-width: 0px;
+    }
+
+.InitiativeRoll2 {
+    text-align: center;
+    background-color: transparent;
+    margin-top: 3px;
+    margin-left: 3px;
+    width: 8%;
+    height: 100%;
+    color: white;
+    font-family: draconis;
+    font-size: x-large;
+    text-shadow: -1px -1px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    letter-spacing: 0.1rem;
+    float:left;
+}
+
+    .InitiativeRoll2:focus {
+        outline-width: 0px;
+    }
+
+.InitiativeInputMargins {
+    margin-top: -3px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    border: 3px solid black;
+    border-radius: 0px 0px 6px 6px;
+}
+
+/*Buttons*/
+
+.IniButtonContainerVertical td {
+    margin:3px;
+    float: left;
+}
+
+.IniButtonContainerHorizontal td {
+    padding-top: 4px;
+}
+
+.IniButtons {
+    width: 30px;
+    height: 30px;
+    margin-left: 3px;
+    background-color:transparent;
+    border:none;
+}
+
+.RemoveInitiative {
+    float: right;
+    width: 25px;
+    height: 25px;
+}
+
+.Margin4 {
+    margin: 4px;
+}
+
+.Margin2 {
+    margin: 2px;
+}
