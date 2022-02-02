@@ -112,6 +112,19 @@ namespace DMM.Components
                 InitiativeList.First().IsCurrent = true;
             }
         }
+
+        public void PreviousInitiative()
+        {
+            if (InitiativeList.Count > 0)
+            {
+                Initiative i = InitiativeList.Last();
+                InitiativeList.Remove(i);
+                InitiativeList.First().IsCurrent = false;
+                InitiativeList.Insert(0,i);
+                InitiativeList.First().IsCurrent = true;
+            }
+        }
+
         public void ClearInitiative()
         {
             InitiativeList = new();
